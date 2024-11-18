@@ -18,8 +18,11 @@ class _Screen1State extends State<Screen1> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(ImageAssets.anywhere_you_are),
-            SizedBox(height: 2.h),
+            SizedBox(
+              height: 30.h,
+              child: Image.asset(ImageAssets.anywhere_you_are),
+            ),
+            SizedBox(height: 5.h),
             Text(
               'Anywhere you are',
               style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20.sp),

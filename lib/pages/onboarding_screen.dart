@@ -17,7 +17,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return Scaffold(
         backgroundColor: AppColor.primarycolor,
         body: Padding(
-            padding: EdgeInsets.only(bottom: 2.h),
+            padding: EdgeInsets.only(bottom: 4.h),
             child: Stack(children: [
               PageView(
                 controller: _controller,
@@ -26,6 +26,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   Screen2(),
                   Screen3(),
                 ],
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 10.h, right: 5.h),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => Screen3()));
+                    },
+                    child: Text(
+                      'Skip',
+                      style: TextStyle(
+                          fontSize: 17.sp,
+                          fontWeight: FontWeight.bold,
+                          color: AppColor.grey),
+                    ),
+                  ),
+                ),
               ),
               Align(
                   alignment: Alignment(0, 0.75),
@@ -54,6 +73,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           controller: _controller,
                           count: 3,
                         ),
+                        SizedBox(
+                          height: 5.h,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: AppColor.black,
+                              borderRadius: BorderRadius.circular(2.h)),
+                          height: 1.h,
+                          width: 50.w,
+                        )
                       ]))
             ])));
   }

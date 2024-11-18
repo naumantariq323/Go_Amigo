@@ -1,5 +1,4 @@
 import 'package:go_amigo/export.dart';
-import 'package:go_amigo/pages/onboarding_screen.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
@@ -41,6 +40,7 @@ class _WelcomeState extends State<Welcome> {
             Text(
               'Discover The World With Us\nYour Top Travel Companion',
               style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w900),
+              textAlign: TextAlign.center,
             ),
             SizedBox(
               height: 1.h,
@@ -51,6 +51,7 @@ class _WelcomeState extends State<Welcome> {
                 fontSize: 15.sp,
                 color: AppColor.grey,
               ),
+              textAlign: TextAlign.center,
             ),
             SizedBox(
               height: 4.h,
@@ -74,7 +75,7 @@ class _WelcomeState extends State<Welcome> {
               ),
             ),
             SizedBox(
-              height: 1.h,
+              height: 2.h,
             ),
             ElevatedButton(
               onPressed: () {
