@@ -1,7 +1,4 @@
 import 'package:go_amigo/export.dart';
-import 'package:go_amigo/screens/onboardingscreens/screen1.dart';
-import 'package:go_amigo/screens/onboardingscreens/screen2.dart';
-import 'package:go_amigo/screens/onboardingscreens/screen3.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
