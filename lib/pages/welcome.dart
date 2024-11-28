@@ -24,14 +24,6 @@ class _WelcomeState extends State<Welcome> {
                   ),
                   fit: BoxFit.cover,
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColor.primarycolor.withOpacity(0.9),
-                    spreadRadius: 5,
-                    blurRadius: 6,
-                    offset: const Offset(2, 6),
-                  ),
-                ],
               ),
             ),
             SizedBox(
@@ -61,7 +53,8 @@ class _WelcomeState extends State<Welcome> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const OnboardingScreen()));
+                        builder: (context) =>
+                            const OnboardingScreen(isLogin: true)));
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: AppColor.secondarycolor,
@@ -82,7 +75,9 @@ class _WelcomeState extends State<Welcome> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const OnboardingScreen()));
+                        builder: (context) => const OnboardingScreen(
+                              isLogin: false,
+                            )));
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: AppColor.primarycolor,

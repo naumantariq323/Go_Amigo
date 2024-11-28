@@ -12,8 +12,7 @@ class _Screen2State extends State<Screen2> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColor.primarycolor,
-        body: Padding(
-          padding: EdgeInsets.all(5.h),
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,7 +31,7 @@ class _Screen2State extends State<Screen2> {
               ),
               SizedBox(height: 1.h),
               Text(
-                'Plan ahead or book last minute - your spot is\navialable anytime',
+                'Plan ahead or book last minute-your spot is available anytime',
                 style: TextStyle(
                   color: AppColor.grey,
                 ),

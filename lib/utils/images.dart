@@ -9,4 +9,8 @@ class ImageAssets {
   static String at_anytime = 'assets/images/at_anytime.png';
 
   static String book_your_car = 'assets/images/book_your_car.png';
+
+  static String home = 'assets/images/home.png';
+
+  static String thank_you = 'assets/images/thanks_you.png';
 }

@@ -12,8 +12,7 @@ class _Screen3State extends State<Screen3> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColor.primarycolor,
-        body: Padding(
-          padding: EdgeInsets.all(5.h),
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

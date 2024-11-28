@@ -1,7 +1,8 @@
 import 'package:go_amigo/export.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({super.key});
+  final bool isLogin;
+  const OnboardingScreen({Key? key, required this.isLogin}) : super(key: key);
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
@@ -30,15 +31,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   padding: EdgeInsets.only(top: 10.h, right: 5.h),
                   child: InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => Screen3()));
+                      if (widget.isLogin) {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => Login()),
+                        );
+                      } else {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUp()),
+                        );
+                      }
                     },
                     child: Text(
                       'Skip',
                       style: TextStyle(
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.bold,
-                          color: AppColor.grey),
+                        fontSize: 17.sp,
+                        fontWeight: FontWeight.bold,
+                        color: AppColor.grey,
+                      ),
                     ),
                   ),
                 ),
@@ -53,9 +64,26 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 backgroundColor: AppColor.secondarycolor,
                                 minimumSize: Size(40.w, 7.h)),
                             onPressed: () {
-                              _controller.nextPage(
-                                  duration: Duration(milliseconds: 500),
-                                  curve: Curves.easeIn);
+                              if (_controller.page != null &&
+                                  _controller.page!.toInt() < 2) {
+                                _controller.nextPage(
+                                    duration: Duration(milliseconds: 500),
+                                    curve: Curves.easeIn);
+                              } else {
+                                if (widget.isLogin) {
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Login()),
+                                  );
+                                } else {
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SignUp()),
+                                  );
+                                }
+                              }
                             },
                             child: Text(
                               'Next',
@@ -67,6 +95,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           height: 2.h,
                         ),
                         SmoothPageIndicator(
+                          effect: WormEffect(
+                              dotColor: AppColor.lightgrey,
+                              activeDotColor: AppColor.secondarycolor,
+                              dotWidth: 8.w),
                           controller: _controller,
                           count: 3,
                         ),
@@ -76,7 +108,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         Container(
                           decoration: BoxDecoration(
                               color: AppColor.black,
-                              borderRadius: BorderRadius.circular(2.h)),
+                              borderRadius: BorderRadius.circular(2.sp)),
                           height: 1.h,
                           width: 50.w,
                         )

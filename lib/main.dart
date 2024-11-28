@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:go_amigo/pages/splash.dart';
-import 'package:sizer/sizer.dart';
+import 'package:go_amigo/export.dart';
 
 void main() => runApp(const GoAmigo());
 
